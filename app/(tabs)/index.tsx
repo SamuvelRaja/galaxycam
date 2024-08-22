@@ -9,7 +9,7 @@ import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 
 export default function HomeScreen() {
-  const [facing, setFacing] = useState<CameraType>('back');
+  // const [facing, setFacing] = useState<CameraType>('back');
   const [permission, requestPermission] = useCameraPermissions();
 
   if (!permission) {
@@ -27,17 +27,17 @@ export default function HomeScreen() {
     );
   }
 
-  function toggleCameraFacing() {
-    setFacing(current => (current === 'back' ? 'front' : 'back'));
-  }
+  // function toggleCameraFacing() {
+  //   setFacing(current => (current === 'back' ? 'front' : 'back'));
+  // }
 
   return (
     <View style={styles.container}>
-      <CameraView style={styles.camera} facing={facing}>
+      <CameraView style={styles.camera} facing={'back'} mode='picture'>
         <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.button} onPress={toggleCameraFacing}>
+          {/* <TouchableOpacity style={styles.button} onPress={toggleCameraFacing}>
             <Text style={styles.text}>Flip Camera</Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         </View>
       </CameraView>
     </View>
