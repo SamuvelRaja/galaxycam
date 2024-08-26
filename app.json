@@ -13,13 +13,21 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "$(galaxycam) needs access to your Camera."
+      },
+      "bundleIdentifier": "com.anonymous.galaxycam"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "android.permission.CAMERA"
+      ],
+      "package": "com.anonymous.galaxycam"
     },
     "web": {
       "bundler": "metro",
@@ -28,10 +36,24 @@
     },
     "plugins": [
       "expo-router",
-      "react-native-vision-camera"
+      [
+        "react-native-vision-camera",
+        {
+          "cameraPermissionText": "$(galaxycam) needs access to your Camera."
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "fa4a083d-6337-4c80-b8c8-854d058a87ac"
+      }
+    },
+    "owner": "samjs001"
   }
 }

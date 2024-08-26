@@ -1,14 +1,51 @@
+# dependencies
 node_modules/
+
+# Expo
 .expo/
 dist/
-npm-debug.*
+web-build/
+
+# Native files
+*.orig.*
 *.jks
 *.p8
 *.p12
 *.key
 *.mobileprovision
-*.orig.*
-web-build/
 
-# macOS
+# Metro bundler
+.metro-health-check*
+
+# Debug files
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# macOS files
 .DS_Store
+*.pem
+
+# Environment files
+.env*.local
+
+# TypeScript
+*.tsbuildinfo
+
+# Expo specific
+expo-env.d.ts
+
+# Lockfiles
+package-lock.json
+yarn.lock
+
+# Logs
+*.log
+
+# Build directories
+ios/
+android/
+
+# Miscellaneous
+.idea/
+.vscode/
